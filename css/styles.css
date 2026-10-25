@@ -1,0 +1,513 @@
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+    padding: 35px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+
+    background: linear-gradient(
+        -45deg,
+        #080b1c,
+        #191044,
+        #082d4b,
+        #260d35
+    );
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* ===== BACKGROUND GLOW ===== */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: -1;
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+body::before {
+    background: #633cff;
+    top: 5%;
+    left: 3%;
+}
+
+body::after {
+    background: #00d9ff;
+    right: 3%;
+    bottom: 5%;
+    animation-delay: -4s;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0) scale(0.9);
+    }
+    to {
+        transform: translate(35px, -25px) scale(1.2);
+    }
+}
+
+/* ===== PAGE HEADING ===== */
+.page-header {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.page-header h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #67e8f9,
+        #c4b5fd,
+        #ffffff
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.45));
+    animation: titleShine 5s linear infinite;
+}
+
+.page-header p {
+    margin-top: 10px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+@keyframes titleShine {
+    to { background-position: 200% center; }
+}
+
+/* ===== TWO-CARD LAYOUT ===== */
+.auth-container {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 36px;
+    position: relative;
+}
+
+/* ===== GLASS CARDS ===== */
+.login-box,
+.register-box {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 380px;
+    padding: 30px 26px;
+
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(99, 60, 255, 0.15);
+
+    animation: cardAppear 0.8s ease both;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.login-box {
+    border-color: rgba(0, 217, 255, 0.45);
+    box-shadow:
+        0 0 18px rgba(0, 217, 255, 0.2),
+        0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.register-box {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow:
+        0 0 18px rgba(168, 85, 247, 0.22),
+        0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+    border-color: #00d9ff;
+    box-shadow:
+        0 0 20px rgba(0, 217, 255, 0.5),
+        0 0 40px rgba(0, 217, 255, 0.18),
+        0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.register-box:hover {
+    transform: translateY(-5px);
+    border-color: #c084fc;
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.55),
+        0 0 40px rgba(168, 85, 247, 0.2),
+        0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        translate: 0 20px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* ===== CARD HEADINGS ===== */
+.login-box h2,
+.register-box h2 {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 24px;
+    white-space: normal;
+    text-shadow: 0 0 15px rgba(125, 211, 252, 0.3);
+}
+
+/* ===== INPUTS ===== */
+.input-box {
+    margin-bottom: 17px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 7px;
+    color: #e0e7ff;
+    font-size: 13px;
+}
+
+.input-box input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+
+    color: white;
+    background: rgba(8, 15, 40, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 9px;
+    outline: none;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box input::placeholder {
+    color: #aab5d0;
+}
+
+.input-box input:focus {
+    border-color: #67e8f9;
+    box-shadow:
+        0 0 8px rgba(103, 232, 249, 0.45),
+        0 0 18px rgba(99, 60, 255, 0.2);
+}
+
+/* ===== SIGN IN OPTIONS ===== */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #e0e7ff;
+}
+
+.remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.remember input,
+.terms input {
+    accent-color: #00d9ff;
+}
+
+.options a,
+.signup a,
+.signin a {
+    color: #67e8f9;
+    text-decoration: none;
+}
+
+.options a:hover,
+.signup a:hover,
+.signin a:hover {
+    color: white;
+    text-shadow: 0 0 10px #67e8f9;
+}
+
+/* ===== MAIN FORM BUTTONS ===== */
+.login-box form > button,
+.register-box form > button {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px;
+
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        #5145ff,
+        #008cff,
+        #a855f7
+    );
+    background-size: 200% auto;
+
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+
+    box-shadow: 0 0 16px rgba(81, 69, 255, 0.3);
+    transition: background-position 0.35s ease,
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.login-box form > button:hover,
+.register-box form > button:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.45),
+        0 0 28px rgba(81, 69, 255, 0.35);
+}
+
+/* ===== BOTTOM LINKS ===== */
+.signup,
+.signin {
+    margin-top: 20px;
+    color: #e0e7ff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ===== TERMS ===== */
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 0 18px;
+    color: #e0e7ff;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.terms input {
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ===== SOCIAL DIVIDER ===== */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    color: #cbd5e1;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== SOCIAL BUTTONS ===== */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #202124;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+}
+
+.google-icon {
+    color: #4285f4;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.social-btn.apple {
+    background: #111;
+    color: white;
+    border-color: #555;
+}
+
+.apple-icon {
+    font-size: 18px;
+}
+
+/* ===== CENTER NEON DIVIDER ===== */
+.neon-divider {
+    align-self: stretch;
+    flex: 0 0 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+
+    border-radius: 10px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #00eaff 15%,
+        #a855f7 50%,
+        #00eaff 85%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px #00eaff,
+        0 0 20px rgba(0, 234, 255, 0.7),
+        0 0 35px rgba(168, 85, 247, 0.45);
+}
+
+.neon-divider span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 9px 7px;
+    border: 1px solid rgba(103, 232, 249, 0.7);
+    border-radius: 20px;
+
+    background: #11152e;
+    color: #a5f3fc;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 10px rgba(0, 234, 255, 0.6),
+        0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 760px) {
+    body {
+        justify-content: flex-start;
+        padding: 30px 16px;
+        gap: 25px;
+    }
+
+    .auth-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        max-width: 400px;
+    }
+
+    .login-box,
+    .register-box {
+        flex: none;
+        width: 100%;
+        max-width: 380px;
+        padding: 26px 22px;
+    }
+
+    .neon-divider {
+        align-self: center;
+        flex: none;
+        width: 150px;
+        height: 3px;
+        margin: 0;
+        background: linear-gradient(
+            to right,
+            transparent,
+            #00eaff,
+            #a855f7,
+            #00eaff,
+            transparent
+        );
+    }
+
+    .neon-divider span {
+        padding: 5px 8px;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
