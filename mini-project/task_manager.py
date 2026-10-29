@@ -1,78 +1,123 @@
-print("Welcome to Task Manager")
-    
-print("Select Menu")
-    
-print("1. Add, 2. Show, 3. Delete, 4. Exit")
+# Task Manager
 
+print("\nWelcome to Task Manager\n")
+
+3 # Create a Empty List for Stored Task.
 
 tasks = []
 
+# Create a Function For Add Task in Task List
+
 def add_task(task):
 
+    # Remove White Space
+
+    task = task.strip()
+
+    # Control Empty Task
+
+    if not task:
+
+        print("Task cannot be empty!")
+
+        return
+
+    # Add Task
+    
     tasks.append(task)
 
-    print(f"Task {task} Added in Task List.")
+    print(f'\nTask "{task}" Added in Task List.')
 
+# Create a Function for Display Data
 
 def show_tasks():
 
-    print(f"===========Task List=======")
+    print("\n===========Task List=======\n")
 
-    print()
+    # Control Empty Task
 
-    for i, task in enumerate(tasks):
+    if not tasks:
 
-        print(f"{i + 1}. {task}")
+        print("No tasks available.\n")
 
-    print()
+        return
+
+    # Display Task List With Serial
+
+    for i, task in enumerate(tasks, start= 1):
+
+        print(f"{i}. {task}")
 
 
 def delete_task(index):
 
-    if index > len(tasks):
+    if index > len(tasks) or index < 0:
         
-        print(f"Index Out of Range")
+        print(f"{index} out of Range!! or Invalid Task Number!!!\n")
 
-    else:
+        return
 
-        tasks.pop(index)
+    remove_item = tasks.pop( index - 1)
 
-        print(f"{index} Deleted from Task List")
-        
+    print(f"\nTask '{remove_item}' deleted successfully.\n")
+     
 
 while True:
+    
+    print("Select Menu\n")
+    
+    print("1. Add \n2. Show \n3. Delete \n4. Exit")
 
     try:
 
-        menu = int(input("Choice Number: "))
+        n = int(input("\nChoice Number: "))
 
-        if menu == 1:
 
-            n = int(input("Number of Task: "))
+        if n == 1:
 
-            for i in range(n):
+            task_number = int(input("\nNumber of Task: "))
 
-                add = input("Enter your Task: ")
+            if task_number <= 0:
+
+                print("\nEnter a number greater than 0!")
+
+                continue
+
+            for i in range(task_number):
+
+                add = input("\nEnter your Task: ")
 
                 add_task(add)
             
-        elif menu == 2:
+        elif n == 2:
 
             show_tasks()
 
-        elif menu == 3:
+        elif n == 3:
 
-            delete = int(input("Enter Task No You Deleted: "))
+            if not tasks:
+
+                print("\nNo tasks to delete!")
+
+                continue
+
+            show_tasks()
+
+            delete = int(input("\nEnter Task No You Delete: "))
 
             delete_task(delete)
 
-        elif menu == 4:
+        elif n == 4:
 
-            print("Thank you")
+            print("\nThank you for using Task Manager")
 
             break
+
+        else:
+
+            print("\nInvalid choice! Please select 1 to 4.")
 
 
     except ValueError :
 
-        print(f"Enter Valid Number from 1 to 4")
+        print("\nEnter Number Only")
