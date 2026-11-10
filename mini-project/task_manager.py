@@ -51,7 +51,7 @@ def show_tasks():
 
 def delete_task(index):
 
-    if index > len(tasks) or index < 0:
+    if index > len(tasks) or index <= 0:
         
         print(f"{index} out of Range!! or Invalid Task Number!!!\n")
 
@@ -60,13 +60,38 @@ def delete_task(index):
     remove_item = tasks.pop( index - 1)
 
     print(f"\nTask '{remove_item}' deleted successfully.\n")
+
+
+# Edit Task Option
+
+def edit_task(index, name):
+
+    name = name.strip()
+
+    if index > len(tasks) or index <= 0:
+            
+        print(f"{index} out of Range!! or Invalid Task Number!!!\n")
+    
+        return
+
+    if not name:
+
+        print("Task name cannot be empty!")
+
+        return
+
+    old_name = tasks[index - 1]
+
+    tasks[index - 1] = name
+
+    print(f"\nTask '{old_name}' change to'{name}'")
      
 
 while True:
     
     print("Select Menu\n")
     
-    print("1. Add \n2. Show \n3. Delete \n4. Exit")
+    print("1. Add \n2. Show \n3. Delete \n4. Edit \n5. Exit")
 
     try:
 
@@ -103,11 +128,27 @@ while True:
 
             show_tasks()
 
-            delete = int(input("\nEnter Task No You Delete: "))
+            delete = int(input("\nEnter Task ID You Delete: "))
 
             delete_task(delete)
 
         elif n == 4:
+
+            if not tasks:
+            
+                print("\nNo tasks to Editable!")
+            
+                continue
+
+            show_tasks()
+
+            edit = int(input("\nEnter Task ID You Edit: "))
+            item = input("\nEnter New Name: ")
+
+            edit_task(index= edit, name= item)
+
+
+        elif n == 5:
 
             print("\nThank you for using Task Manager")
 
@@ -115,7 +156,7 @@ while True:
 
         else:
 
-            print("\nInvalid choice! Please select 1 to 4.")
+            print("\nInvalid choice! Please select 1 to 5.")
 
 
     except ValueError :
