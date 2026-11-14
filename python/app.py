@@ -128,6 +128,11 @@
 
 
 
-print("-" * 6 + "Monthly Report" + "-" * 6)
+student = {
 
+    'name' : "Mokaddes",
+    'age' : 31
+}
+
+print(student)
 
