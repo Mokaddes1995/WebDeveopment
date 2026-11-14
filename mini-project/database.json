@@ -1,0 +1,12 @@
+[
+    {
+        "item": "Mango",
+        "amount": 200,
+        "category": "Fruits"
+    },
+    {
+        "item": "Banana",
+        "amount": 300,
+        "category": "Fruits"
+    }
+]
