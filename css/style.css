@@ -1,0 +1,59 @@
+* {
+
+    box-sizing: border-box;
+}
+
+
+body {
+
+    background-color: lightblue;
+
+    margin: 0;
+}
+
+.box {
+
+    background-color: red;
+
+    width: 300px;
+
+    margin-bottom: 30px;
+
+    padding: 20px;
+
+}
+
+.box2 {
+
+    background-color: blue;
+
+    width: 200px;
+
+    padding: 20px;
+}
+
+.heading {
+
+    color: darkblue;
+    text-align: center;
+}
+
+.paragraph {
+
+    color: green;
+    font-size: 20px;
+}
+
+button {
+
+    color: red;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+ 
+}
