@@ -967,161 +967,161 @@
 // // C
 
 
-/*
+// /*
 
-প্রশ্ন ১: Add Function
+// প্রশ্ন ১: Add Function
 
-একটি add() Function তৈরি করো।
+// একটি add() Function তৈরি করো।
 
-দুটি Number Parameter নেবে।
+// দুটি Number Parameter নেবে।
 
-দুটি Number যোগ করে Return করবে।
+// দুটি Number যোগ করে Return করবে।
 
-*/
+// */
 
-function add(a, b) {
+// function add(a, b) {
 
-  return a + b;
-}
+//   return a + b;
+// }
 
-console.log(add(10, 20));
+// console.log(add(10, 20));
 
-/*
+// /*
 
-প্রশ্ন ২: Square Function
+// প্রশ্ন ২: Square Function
 
-একটি Arrow Function তৈরি করো।
+// একটি Arrow Function তৈরি করো।
 
-একটি Number নেবে।
+// একটি Number নেবে।
 
-Number-এর Square Return করবে।
+// Number-এর Square Return করবে।
 
-*/
+// */
 
 
-const square = number => number * number;
+// const square = number => number * number;
 
-console.log(square(5));
+// console.log(square(5));
 
 
-/*
+// /*
 
-প্রশ্ন ৩: Even or Odd
+// প্রশ্ন ৩: Even or Odd
 
-একটি checkNumber() Function তৈরি করো।
+// একটি checkNumber() Function তৈরি করো।
 
-একটি Number নেবে।
+// একটি Number নেবে।
 
-জোড় হলে "Even" Return করবে।
+// জোড় হলে "Even" Return করবে।
 
-বিজোড় হলে "Odd" Return করবে।
+// বিজোড় হলে "Odd" Return করবে।
 
-*/
+// */
 
 
-const checkNumber = function (number) {
+// const checkNumber = function (number) {
 
-  if (number % 2 === 0) {
+//   if (number % 2 === 0) {
 
-    return 'Even';
+//     return 'Even';
 
-  }else {
+//   }else {
 
-    return "Odd";
-  }
+//     return "Odd";
+//   }
 
-}
+// }
 
 
-console.log(checkNumber(8)); // Even
-console.log(checkNumber(7)); // Odd
+// console.log(checkNumber(8)); // Even
+// console.log(checkNumber(7)); // Odd
 
 
-/*
+// /*
 
-প্রশ্ন ৪: Full Name
+// প্রশ্ন ৪: Full Name
 
-একটি Function তৈরি করো getFullName() নামে।
+// একটি Function তৈরি করো getFullName() নামে।
 
-firstName এবং lastName নেবে।
+// firstName এবং lastName নেবে।
 
-দুটি নাম একসাথে Return করবে।
+// দুটি নাম একসাথে Return করবে।
 
-*/
+// */
 
-const getFullName = function (firstName, lastName) {
+// const getFullName = function (firstName, lastName) {
 
-  return firstName + " " + lastName;
-}
+//   return firstName + " " + lastName;
+// }
 
-console.log(getFullName("Rahim", "Ahmed"));
-// Rahim Ahmed
+// console.log(getFullName("Rahim", "Ahmed"));
+// // Rahim Ahmed
 
 
-/*
+// /*
 
-প্রশ্ন ৫: Calculator
+// প্রশ্ন ৫: Calculator
 
-একটি calculator() Function তৈরি করো।
+// একটি calculator() Function তৈরি করো।
 
-দুটি Number নেবে।
+// দুটি Number নেবে।
 
-একটি Callback Function নেবে।
+// একটি Callback Function নেবে।
 
-Callback দিয়ে যোগ, বিয়োগ ও গুণ করবে।
+// Callback দিয়ে যোগ, বিয়োগ ও গুণ করবে।
 
-*/
+// */
 
-function calculator(a, b, Callback) {
+// function calculator(a, b, Callback) {
 
-  let result = Callback(a, b);
+//   let result = Callback(a, b);
 
-  console.log(result);
-}
+//   console.log(result);
+// }
 
 
-function add(x, y) {
+// function add(x, y) {
 
-  return x + y;
-}
+//   return x + y;
+// }
 
 
-function subtract(x, y) {
+// function subtract(x, y) {
 
-  return x - y;
-}
+//   return x - y;
+// }
 
 
-function multiply(x, y) {
+// function multiply(x, y) {
 
-  return x * y;
-}
+//   return x * y;
+// }
 
-calculator(10, 5, add);      // 15
-calculator(10, 5, subtract); // 5
-calculator(10, 5, multiply); // 50
+// calculator(10, 5, add);      // 15
+// calculator(10, 5, subtract); // 5
+// calculator(10, 5, multiply); // 50
 
 
-/* 
+// /* 
 
-প্রশ্ন ৬: Default Parameter
+// প্রশ্ন ৬: Default Parameter
 
-একটি greet() Function তৈরি করো।
+// একটি greet() Function তৈরি করো।
 
-একটি name Parameter থাকবে।
+// একটি name Parameter থাকবে।
 
-Default value হবে "Guest"।
+// Default value হবে "Guest"।
 
-Name না দিলে "Hello Guest" দেখাবে।
+// Name না দিলে "Hello Guest" দেখাবে।
 
-*/
+// */
 
-function greet(name = "Guest") {
+// function greet(name = "Guest") {
   
-  console.log("Hello ", name)
-}
+//   console.log("Hello ", name)
+// }
 
 
-greet()
+// greet()
 
-greet("Rahim")
+// greet("Rahim")
