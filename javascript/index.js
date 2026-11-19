@@ -1125,3 +1125,230 @@
 // greet()
 
 // greet("Rahim")
+
+/*
+
+নিজে কোড লিখে নিচের কাজগুলো করো:
+1. colors নামে একটি Array তৈরি করো। ৫টি Color রাখবে।
+2. প্রথম Color Print করবে।
+3. শেষ Color Print করবে।
+4. Array-এর Length Print করবে।
+5. দ্বিতীয় Color পরিবর্তন করে "Black" করবে।
+6. for loop দিয়ে সব Color Print করবে।
+
+*/
+
+// let colors = ['Red', "White", "Green", "Yellow", 'Black'];
+
+// console.log(colors[0]);
+
+// console.log(colors[4]);
+
+// console.log(colors.length);
+
+// colors[1] = "Black";
+
+// for (let i = 0; i < colors.length; i++) {
+
+//     console.log(colors[i]);
+// }
+
+
+
+/*
+
+আজকের Challenge
+
+একটি students Array তৈরি করো:
+
+- সব Student-এর নাম Print করবে।
+- মোট Student সংখ্যা বের করবে।
+- "Nayeem"-কে "Fahim" দিয়ে Replace করবে।
+- সব Student-এর নাম Loop দিয়ে Print করবে।
+
+*/
+
+// let students = ["Rahim", "Karim", "Sakib", "Nayeem", "Hasan"];
+
+// console.log(students);
+
+// console.log(students.length);
+
+// students[3] = "Fahim";
+
+// for (let i = 0; i < students.length; i++) {
+
+//    console.log(students[i]);
+// }
+
+
+// /*
+// Task 1:
+
+// push() দিয়ে "Black" যোগ করো।
+
+// pop() দিয়ে শেষ Color মুছে ফেলো।
+
+// unshift() দিয়ে "White" যোগ করো।
+
+// shift() দিয়ে প্রথম Color মুছে ফেলো।
+
+// সব Color for loop দিয়ে Print করো।
+
+// */
+
+// let colors = ["Red", "Green", "Blue"];
+
+// colors.push("Black");
+
+// console.log(colors);
+
+// colors.pop()
+
+// console.log(colors);
+
+// colors.unshift("White");
+
+// console.log(colors);
+
+// colors.shift();
+
+// console.log(colors);
+
+// for (let i = 0; i < colors.length; i++) {
+
+//     console.log(colors[i]);
+// }
+
+
+
+// /*
+
+// Task 2:
+
+// শেষে "Nayeem" যোগ করো।
+
+// শুরুতে "Hasan" যোগ করো।
+
+// শেষ Student মুছে ফেলো।
+
+// প্রথম Student মুছে ফেলো।
+
+// Final Array এবং Length Print করো।
+
+// */
+
+// let students = ["Rahim", "Karim", "Sakib"];
+
+
+// students.push("Nayeem");
+
+// console.log(students);
+
+// students.unshift("Hasan");
+
+// console.log(students);
+
+// students.pop();
+
+// console.log(students)
+
+// students.shift();
+
+// console.log(students);
+
+// console.log(students.length)
+
+
+/*
+
+Part 3: Practice Tasks
+
+Task 1: concat()
+
+কাজ:
+
+1. দুটি Array concat() দিয়ে যুক্ত করো।
+2. নতুন Array Print করো।
+3. Original frontend এবং backend Print করো।
+4. মোট কয়টি Skill আছে বের করো।
+
+*/
+
+let frontend = ["HTML", "CSS", "JavaScript"];
+let backend = ["Python", "Django", "PostgreSQL"];
+
+
+let new_array = frontend.concat(backend);
+
+console.log(new_array);
+
+console.log(frontend);
+
+console.log(backend);
+
+console.log(new_array.length);
+
+/*
+
+Task 2: includes()
+
+কাজ:
+
+1. "JavaScript" আছে কি না পরীক্ষা করো।
+2. "Django" আছে কি না পরীক্ষা করো।
+3. "React" আছে কি না পরীক্ষা করো।
+4. সবগুলো Result Print করো।
+
+*/
+
+let skills = ["HTML", "CSS", "JavaScript", "React", "Python"];
+
+console.log(skills.includes("JavaScript"));
+
+console.log(skills.includes("Django"));
+
+console.log(skills.includes("React"));
+
+
+
+
+/*
+
+Task 3: indexOf()
+
+কাজ:
+
+1. "JavaScript"-এর Index বের করো।
+2. "Python"-এর Index বের করো।
+3. "Django"-এর Index বের করো।
+4. "React"-এর Index বের করো।
+
+*/
+
+let subjects = ["HTML", "CSS", "JavaScript", "Python", "React"];
+
+/*
+
+Part 4: Mini Project — Student Management System
+
+আজকের Project
+
+এই Project-এ তুমি Array ব্যবহার করে Student Management-এর ছোট একটি System তৈরি করবে।
+
+Project Requirements
+
+প্রথমে এই Array তৈরি করো:
+
+let students = ["Rahim", "Karim", "Sakib"];
+
+তোমার Project-এ নিচের কাজগুলো করতে হবে:
+1. নতুন Student যোগ করতে হবে।
+2. সব Student-এর নাম Print করতে হবে।
+3. কোনো Student আছে কি না Search করতে হবে (includes())।
+4. Student-এর Index খুঁজতে হবে (indexOf())।
+5. দুটি Student List একসঙ্গে যুক্ত করতে হবে (concat())।
+6. নির্দিষ্ট Student Delete করতে হবে (splice())।
+7. Student List-এর Length বের করতে হবে।
+
+*/
