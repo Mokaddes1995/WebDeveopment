@@ -1260,95 +1260,345 @@
 // console.log(students.length)
 
 
+// /*
+
+// Part 3: Practice Tasks
+
+// Task 1: concat()
+
+// কাজ:
+
+// 1. দুটি Array concat() দিয়ে যুক্ত করো।
+// 2. নতুন Array Print করো।
+// 3. Original frontend এবং backend Print করো।
+// 4. মোট কয়টি Skill আছে বের করো।
+
+// */
+
+// let frontend = ["HTML", "CSS", "JavaScript"];
+// let backend = ["Python", "Django", "PostgreSQL"];
+
+
+// let new_array = frontend.concat(backend);
+
+// console.log(new_array);
+
+// console.log(frontend);
+
+// console.log(backend);
+
+// console.log(new_array.length);
+
+// /*
+
+// Task 2: includes()
+
+// কাজ:
+
+// 1. "JavaScript" আছে কি না পরীক্ষা করো।
+// 2. "Django" আছে কি না পরীক্ষা করো।
+// 3. "React" আছে কি না পরীক্ষা করো।
+// 4. সবগুলো Result Print করো।
+
+// */
+
+// let skills = ["HTML", "CSS", "JavaScript", "React", "Python"];
+
+// console.log(skills.includes("JavaScript"));
+
+// console.log(skills.includes("Django"));
+
+// console.log(skills.includes("React"));
+
+
+
+
+// /*
+
+// Task 3: indexOf()
+
+// কাজ:
+
+// 1. "JavaScript"-এর Index বের করো।
+// 2. "Python"-এর Index বের করো।
+// 3. "Django"-এর Index বের করো।
+// 4. "React"-এর Index বের করো।
+
+// */
+
+// let subjects = ["HTML", "CSS", "JavaScript", "Python", "React"];
+
+// /*
+
+// Part 4: Mini Project — Student Management System
+
+// আজকের Project
+
+// এই Project-এ তুমি Array ব্যবহার করে Student Management-এর ছোট একটি System তৈরি করবে।
+
+// Project Requirements
+
+// প্রথমে এই Array তৈরি করো:
+
+// let students = ["Rahim", "Karim", "Sakib"];
+
+// তোমার Project-এ নিচের কাজগুলো করতে হবে:
+// 1. নতুন Student যোগ করতে হবে।
+// 2. সব Student-এর নাম Print করতে হবে।
+// 3. কোনো Student আছে কি না Search করতে হবে (includes())।
+// 4. Student-এর Index খুঁজতে হবে (indexOf())।
+// 5. দুটি Student List একসঙ্গে যুক্ত করতে হবে (concat())।
+// 6. নির্দিষ্ট Student Delete করতে হবে (splice())।
+// 7. Student List-এর Length বের করতে হবে।
+
+// */
+
+
+// let numbers = [10, 20, 30, 40, 50];
+
+// numbers.forEach(num => {
+
+//     console.log(num);
+// })
+
+
+// let students = ["Rahim", "Karim", "Sakib", "Nayeem"];
+
+// students.forEach((student, index) => {
+
+//     console.log(index + 1 + ":" + student);
+// })
+
+
+// // Practice Task 1 — forEach()
+
+// let students = ["Rahim", "Karim", "Sakib", "Nayeem"];
+
+// students.forEach(student => {
+//     console.log(student);
+
+// })
+
+
+// // Practice Task 2 — forEach() with Index
+// // প্রতিটি Student-এর নাম এবং Index Print করো।
+
+
+// students.forEach((student, index) => {
+
+//     console.log(index  + ":" + student);
+// })
+
+
+// // Practice Task 3 — map()
+
+// let numbers = [2, 4, 6, 8, 10];
+
+// const multiplyNumbers = numbers.map(num => num * 5);
+
+// console.log(multiplyNumbers);
+
+
+// // Practice Task 4 — map() with String
+
+// let developers = ["Rahim", "Karim", "Sakib"];
+
+// const addLDevelopers = developers.map(developer => developer + " Deveoper");
+
+// console.log(addLDevelopers);
+
+// Mini Challenge — Student Management
+
+// let students = [
+//     { name: "Rahim", age: 18, marks: 75 },
+//     { name: "Karim", age: 22, marks: 85 },
+//     { name: "Sakib", age: 20, marks: 90 },
+//     { name: "Nayeem", age: 25, marks: 65 }
+// ];
+
+
+// students.forEach(student => {
+
+//     console.log(student.name, student.marks);
+// })
+
+
+// students.forEach(student => {
+
+//     console.log(student.marks + 5);
+// })
+
+
+// const newStudentArray = students.map(student => student.name);
+
+// console.log(newStudentArray);
+
+
+// const newStudentObject =students.map((student) => {
+//     return {name: student.name, marks: student.marks}})
+
+// console.log(newStudentObject);
+
+
+// /* 
+
+// তোমার Challenge
+// 1. শুধু forEach() দিয়ে প্রতিটি Product-এর Name ও Price Print করো।
+// 2. map() দিয়ে প্রতিটি Product-এর Price-এর সঙ্গে ১০% যোগ করে নতুন Array তৈরি করো।
+// 3. map() দিয়ে নতুন Object তৈরি করো, যেখানে থাকবে:
+// - name
+// - price
+// - discount (Price-এর ১০%)
+// - finalPrice (Price থেকে ১০% Discount বাদ দেওয়ার পর)
+
+// */
+
+// let products = [
+//     { name: "Laptop", price: 50000 },
+//     { name: "Mobile", price: 20000 },
+//     { name: "Keyboard", price: 1500 }
+// ];
+
+
+// products.forEach(product => {
+
+//     console.log("Product Name: " + product.name + ", "  + "Price: " + product.price)
+// })
+
+
+// const addPrice = products.map(product => product.price + (product.price * 0.10));
+
+// console.log(addPrice)
+
+
+// const newProductObject = products.map(product => {
+
+//     return {
+
+//         name: product.name,
+//         price: product.price,
+//         discount: product.price * 0.10,
+//         finalPrice: product.price - (product.price * 0.10)
+//     };
+// })
+
+// console.log(newProductObject)
+
+
+
+// let numbers = [10, 20, 30, 40];
+
+// const total = numbers.reduce((sum, num) => {
+
+//     return sum += num
+// }, 0);
+
+// console.log(total);
+
+
+// // Task 1: নিচের Array-এর সব সংখ্যার যোগফল বের করো।
+
+// let numbers = [15, 25, 35, 45, 50];
+
+// const total = numbers.reduce((sum, num) => {
+
+//     return sum + num;
+// })
+
+// console.log(total);
+
+
+// // Task 2: সব Product-এর মোট Price বের করো।
+
+// let products = [
+//     { name: "Laptop", price: 50000 },
+//     { name: "Mobile", price: 20000 },
+//     { name: "Keyboard", price: 1500 }
+// ];
+
+
+// const totalPrice = products.reduce((sum, product) => {
+
+//     return sum + product.price;
+
+// }, 0)
+
+
+// console.log(totalPrice)
+
+
+// // Task 3: নিচের Marks থেকে মোট Marks বের করো।
+
+// let marks = [75, 85, 90, 65, 80];
+
+// const totalMarks = marks.reduce((sum, num) => {
+
+//     return sum + num;
+
+// }, 0)
+
+
+// console.log(totalMarks)
+
 /*
 
-Part 3: Practice Tasks
+Task 1 — forEach()
 
-Task 1: concat()
+প্রতিটি Product-এর Name এবং Price Print করো।
 
-কাজ:
+Task 2 — map()
 
-1. দুটি Array concat() দিয়ে যুক্ত করো।
-2. নতুন Array Print করো।
-3. Original frontend এবং backend Print করো।
-4. মোট কয়টি Skill আছে বের করো।
+প্রতিটি Product-এর Price-এর সঙ্গে ১০% VAT যোগ করে নতুন Array তৈরি করো।
+
+Task 3 — filter()
+
+যেসব Product-এর Price ১০,০০০ টাকার বেশি, সেগুলো বের করো।
+
+Task 4 — reduce()
+
+সব Product-এর মোট Price বের করো।
+
+Bonus Challenge: reduce() ব্যবহার করে সব Product-এর মধ্যে সবচেয়ে বেশি দামের Product-এর নাম ও দাম বের করার চেষ্টা করো।
 
 */
 
-let frontend = ["HTML", "CSS", "JavaScript"];
-let backend = ["Python", "Django", "PostgreSQL"];
+
+let products = [
+    { name: "Laptop", price: 50000 },
+    { name: "Mobile", price: 20000 },
+    { name: "Keyboard", price: 1500 },
+    { name: "Mouse", price: 1000 },
+    { name: "Monitor", price: 15000 }
+];
 
 
-let new_array = frontend.concat(backend);
+products.forEach(product => {
 
-console.log(new_array);
-
-console.log(frontend);
-
-console.log(backend);
-
-console.log(new_array.length);
-
-/*
-
-Task 2: includes()
-
-কাজ:
-
-1. "JavaScript" আছে কি না পরীক্ষা করো।
-2. "Django" আছে কি না পরীক্ষা করো।
-3. "React" আছে কি না পরীক্ষা করো।
-4. সবগুলো Result Print করো।
-
-*/
-
-let skills = ["HTML", "CSS", "JavaScript", "React", "Python"];
-
-console.log(skills.includes("JavaScript"));
-
-console.log(skills.includes("Django"));
-
-console.log(skills.includes("React"));
+    console.log("Product Name: " + product.name + ", " + "Price: " + product.price);
+})
 
 
+const newPriceArray = products.map(product => product.price + (product.price * 0.10));
+
+console.log(newPriceArray);
 
 
-/*
+const filterPrice = products.filter(product => product.price > 10000);
 
-Task 3: indexOf()
+console.log(filterPrice)
 
-কাজ:
 
-1. "JavaScript"-এর Index বের করো।
-2. "Python"-এর Index বের করো।
-3. "Django"-এর Index বের করো।
-4. "React"-এর Index বের করো।
+const totalProductPrice = products.reduce((total, product) => {
 
-*/
+    return total + product.price;
+}, 0);
 
-let subjects = ["HTML", "CSS", "JavaScript", "Python", "React"];
+console.log("Total Price: ", totalProductPrice);
 
-/*
 
-Part 4: Mini Project — Student Management System
+const expensiveProduct = products.reduce((max, product) => {
+    
+    return product.price > max.price ? product: max
+});
 
-আজকের Project
-
-এই Project-এ তুমি Array ব্যবহার করে Student Management-এর ছোট একটি System তৈরি করবে।
-
-Project Requirements
-
-প্রথমে এই Array তৈরি করো:
-
-let students = ["Rahim", "Karim", "Sakib"];
-
-তোমার Project-এ নিচের কাজগুলো করতে হবে:
-1. নতুন Student যোগ করতে হবে।
-2. সব Student-এর নাম Print করতে হবে।
-3. কোনো Student আছে কি না Search করতে হবে (includes())।
-4. Student-এর Index খুঁজতে হবে (indexOf())।
-5. দুটি Student List একসঙ্গে যুক্ত করতে হবে (concat())।
-6. নির্দিষ্ট Student Delete করতে হবে (splice())।
-7. Student List-এর Length বের করতে হবে।
-
-*/
+console.log(expensiveProduct);
